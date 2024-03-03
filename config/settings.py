@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_dump_load_utf8',
     'catalog'
 ]
 
@@ -82,6 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'DZ_project_django',
         'USER': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
         'PASSWORD': os.getenv('key'),
     }
 }
