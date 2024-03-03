@@ -1,1 +1,1 @@
-DZ_project_django
+DZ_prodject_django
