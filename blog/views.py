@@ -12,8 +12,8 @@ class BlogpostCreateView(CreateView):
 
     def form_valid(self, form):
         if form.is_valid():
-            new_mat = form.save()
-            new_mat.slug = slugify(new_mat.title)
+            new_blog = form.save()
+            new_blog.slug = slugify(new_blog.title)
         return super().form_valid(form)
 
 
@@ -22,7 +22,7 @@ class BlogpostListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        queryset = queryset.filter(publicatiob_sign=True)
+        queryset = queryset.filter(publication_sign=True)
         return queryset
 
 
@@ -42,8 +42,8 @@ class BlogpostUpdateView(UpdateView):
 
     def form_valid(self, form):
         if form.is_valid():
-            new_mat = form.save()
-            new_mat.slug = slugify(new_mat.title)
+            new_blog = form.save()
+            new_blog.slug = slugify(new_blog.title)
         return super().form_valid(form)
 
     def get_success_url(self):

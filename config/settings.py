@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_dump_load_utf8',
-    'catalog',
     'blog',
+    'catalog',
 ]
 
 MIDDLEWARE = [

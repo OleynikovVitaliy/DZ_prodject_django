@@ -6,9 +6,9 @@ app_name = 'blog'
 
 
 urlpatterns = [
-     path('create/', BlogpostCreateView.as_view(), name='create'),
-     path('blog_list/', BlogpostListView.as_view(), name='blog_list'),
+     path('', BlogpostListView.as_view(), name='blog_list'),
      path('view/<int:pk>/', BlogpostDetailView.as_view(), name='view'),
-     path('edit/<int:pk>/', BlogpostUpdateView.as_view(), name='edit'),
+     path('create/', BlogpostCreateView.as_view(), name='create'),
+     path('update/<int:pk>/', BlogpostUpdateView.as_view(), name='update'),
      path('delete/<int:pk>/', BlogpostDeleteView.as_view(), name='delete'),
 ]
