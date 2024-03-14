@@ -10,8 +10,8 @@
                         {% csrf_token %}
                         <p> Хотите удалить статью: "{{ object.title | truncatechars:40 }}"? </p>
                         <button Type="submit" class="btn btn-danger"> Подтвердить </button>
-                        <button Type="submit" href="{% url 'blog:blog_list' %}" class="btn btn-success">
-                            Вернуться назад </button>
+                        <a Type="submit" href="{% url 'blog:blog_list' %}" class="btn btn-success">
+                            Вернуться назад </a>
                     </form>
                 </div>
             </div>
