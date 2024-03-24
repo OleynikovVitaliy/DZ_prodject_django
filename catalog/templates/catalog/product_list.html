@@ -8,6 +8,9 @@
     <h1 class="display-4">Продукты для всех</h1>
     <p class="lead"> Продуктовый онлайн-магазин </p>
 </div>
+<div class="col-12 mb-5 text-center">
+    <a class="w-100 btn btn-lg btn-outline-primary" href="{% url 'shop:product_create' %}"> Добавить товар </a>
+</div>
 <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for object in object_list %}
@@ -22,9 +25,11 @@
                     <ul align="center" class="list-unstyled mt-3 mb-4">
                         <li>{{ object.category }}</li>
                         <li>{{ object.description | truncatechars:100 }}</li>
+                        <li> Активная версия: {{ object.active_version }}</li>
                     </ul>
-                    <a href="{% url 'shop:product_detail' object.pk %}" class="w-100 btn btn-lg btn-outline-primary"> О
-                        товаре </a>
+                    <a href="{% url 'shop:product_detail' object.pk %}" class="w-100 btn btn-lg btn-outline-primary"> О товаре </a>
+                    <a href="{% url 'shop:product_update' object.pk %}" class="w-100 btn btn-lg btn-outline-primary"> Редактировать товар </a>
+                    <a href="{% url 'shop:product_delete' object.pk %}" class="w-100 btn btn-lg btn-outline-primary"> Удалить товар </a>
                 </div>
             </div>
         </div>
